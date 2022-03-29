@@ -1,12 +1,12 @@
-const path = require('path');
-const express = require('express');
+const path = require("path");
+const express = require("express");
 const app = express();
-const MY_APP_NAME = ""
+const MY_APP_NAME = "angular-heroku-demo";
 // Serve static files
 app.use(express.static(__dirname + `/dist/${MY_APP_NAME}`));
 
 // Send all requests to index.html
-app.get('/*', function(req, res) {
+app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname + `/dist/${MY_APP_NAME}/index.html`));
 });
 
